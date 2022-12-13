@@ -6,14 +6,14 @@ output:
 date: "2022-10-30"
 ---
 
-Užkrauname reikalingas bibliotekas
+Užkraunamos reikalingos bibliotekos
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(knitr)
 ```
 
-Generuojant ataskaitą galima failo neskaityti kiekvieną kartą iš naujo - cache=TRUE. Nenorint klaidų/informacinių pranešimų pridedame message=FALSE ir warning=FALSE.
+Nuskaitomas duomenų failas
 
 ```{r message=FALSE, warning=FALSE, cache=TRUE}
 df <- read_csv("../1-data/train_data.csv")
@@ -27,10 +27,9 @@ dim(df)
 
 # Kintamųjų apžvalga
 
-(dėl gražesnio spaudinimo, naudojame funkciją kable() ir išdaliname kintamuosius į kelias eilutes)
-
 ```{r}
-summary(df[1:6])
+summary(df[1:6]) %>%
+kable()
 ```
 
 ```{r}
